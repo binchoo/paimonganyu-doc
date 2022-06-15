@@ -138,7 +138,7 @@
 
 ### 페이몬의 코드 리딤
 
-![image](F:\repositories\paimonganyu-doc\resources\new_redeem_workflow)
+![image](resources\new_redeem_workflow)
 
 > ![페이몬 이모지](resources\paimon_emoji.png) 그거 알아? 페이몬은 (관리자에 의해) 새로운 리딤 코드를 알게 될 때마다 
 >
@@ -148,7 +148,7 @@
 
 ### (개발중) 리딤 코드 배포 기능
 
-![image](F:\repositories\paimonganyu-doc\resources\new_user_redeem_workflow)
+![image](resources\new_user_redeem_workflow)
 
 > ![페이몬 이모지](resources\paimon_emoji.png) 새로 알게 된 리딤 코드가 있다구? 그럼 페이몬에게도 알려주지 않을래?
 >
