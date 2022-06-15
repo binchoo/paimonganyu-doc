@@ -1,8 +1,7 @@
 import { getPublicKey } from "@site/src/api";
 import React, { useEffect, useMemo, useState } from "react";
 import { JSEncrypt } from "jsencrypt";
-import { Button, TextField } from "@material-ui/core";
-import { Base64 } from "@site/src/utils/base64";
+import { Box, Button, Card, Modal, TextField } from "@material-ui/core";
 import { QRCodeSVG } from "qrcode.react";
 
 export default function CreateQrCode(): JSX.Element {
@@ -22,13 +21,17 @@ export default function CreateQrCode(): JSX.Element {
     [publicKey]
   );
   return (
-    <div>
-      <form onSubmit={(event) => event.preventDefault()}>
+    <Card variant="outlined" style={{ padding: "20px " }}>
+      <form
+        onSubmit={(event) => event.preventDefault()}
+        style={{ marginBottom: "30px" }}
+      >
         <p>
           <TextField
             id="standard-basic"
             label="ltuid"
             variant="standard"
+            style={{ width: "100%" }}
             onChange={onChangeHandlerFactory(setLtuid)}
           />
         </p>
@@ -37,6 +40,7 @@ export default function CreateQrCode(): JSX.Element {
             id="standard-basic"
             label="ltoken"
             variant="standard"
+            style={{ width: "100%" }}
             onChange={onChangeHandlerFactory(setLtoken)}
           />
         </p>
@@ -45,6 +49,7 @@ export default function CreateQrCode(): JSX.Element {
             id="standard-basic"
             label="cookietoken"
             variant="standard"
+            style={{ width: "100%" }}
             onChange={onChangeHandlerFactory(setCookietoken)}
           />
         </p>
@@ -66,19 +71,17 @@ export default function CreateQrCode(): JSX.Element {
           </Button>
         </div>
       </form>
-      <div>{publicKey && Base64.decode(publicKey)}</div>
-      ---
-      <div>{publicKey && Base64.encode(Base64.decode(publicKey))}</div>
-      ---
-      <div>
-        {publicKey &&
-          Base64.encode(Base64.decode(Base64.encode(Base64.decode(publicKey))))}
-      </div>
-      ---
-      <div>{publicKey}</div>
-      <pre>{JSON.stringify(data)}</pre>
-      {data && <QRCodeSVG value={data} />}
-    </div>
+      <Modal
+        open={!!data}
+        onClose={() => setData("")}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <QRCodeSVG value={data} size={200} />
+        </Box>
+      </Modal>
+    </Card>
   );
 }
 
@@ -93,4 +96,14 @@ const digestRSAFactory = (publicKey: string) => {
   return ({ ltuid, ltoken, cookietoken }: Record<string, string>): string => {
     return jSEncrypt.encrypt(`${ltuid}:${ltoken}:${cookietoken}`) || "";
   };
+};
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  bgcolor: "#FFF",
+  border: "1px solid #000",
+  boxShadow: 50,
+  p: 4,
 };
