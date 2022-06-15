@@ -2,6 +2,7 @@ import { getPublicKey } from "@site/src/api";
 import React, { useEffect, useMemo, useState } from "react";
 import crypto from "crypto-js";
 import { JSEncrypt } from "jsencrypt";
+import { Button, TextField } from "@material-ui/core";
 
 export default function CreateQrCode(): JSX.Element {
   const [ltuid, setLtuid] = useState<string>("");
@@ -23,31 +24,33 @@ export default function CreateQrCode(): JSX.Element {
     <div>
       <form onSubmit={(event) => event.preventDefault()}>
         <p>
-          <label>ltuid</label>
-          <input
-            type="text"
-            name="ltuid"
+          <TextField
+            id="standard-basic"
+            label="ltuid"
+            variant="standard"
             onChange={onChangeHandlerFactory(setLtuid)}
           />
         </p>
         <p>
-          <label>ltoken</label>
-          <input
-            type="text"
-            name="ltoken"
+          <TextField
+            id="standard-basic"
+            label="ltoken"
+            variant="standard"
             onChange={onChangeHandlerFactory(setLtoken)}
           />
         </p>
         <p>
-          <label>cookietoken</label>
-          <input
-            type="text"
-            name="cookietoken"
+          <TextField
+            id="standard-basic"
+            label="cookietoken"
+            variant="standard"
             onChange={onChangeHandlerFactory(setCookietoken)}
           />
         </p>
+
         <div>
-          <button
+          <Button
+            variant="contained"
             onClick={() => {
               setData(
                 digestRSA({
@@ -59,7 +62,7 @@ export default function CreateQrCode(): JSX.Element {
             }}
           >
             생성하기!
-          </button>
+          </Button>
         </div>
       </form>
       <pre>{JSON.stringify(data)}</pre>
