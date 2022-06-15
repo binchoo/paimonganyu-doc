@@ -133,3 +133,23 @@
 꼭 `통행증 조회` 기능을 호출해 보세요. 해당 계정에 대해 출석 체크를 요청하거나, 정보 삭제를 요청할 수도 있습니다~
 
 ![통행증 조회](resources\ui_hoyopasses.png)
+
+## :orange_book: 코드 리딤 서비스
+
+### 페이몬의 코드 리딤
+
+![image](F:\repositories\paimonganyu-doc\resources\new_redeem_workflow)
+
+> ![페이몬 이모지](resources\paimon_emoji.png) 그거 알아? 페이몬은 (관리자에 의해) 새로운 리딤 코드를 알게 될 때마다 
+>
+> 등록된 모든 여행자의 계정으로 코드 리딤을 넣어주고 있다구~
+
+
+
+### (개발중) 리딤 코드 배포 기능
+
+![image](F:\repositories\paimonganyu-doc\resources\new_user_redeem_workflow)
+
+> ![페이몬 이모지](resources\paimon_emoji.png) 새로 알게 된 리딤 코드가 있다구? 그럼 페이몬에게도 알려주지 않을래?
+>
+> 페이몬이 다른 모든 여행자들에게도 리딤 코드를 넣어 주겠어~
