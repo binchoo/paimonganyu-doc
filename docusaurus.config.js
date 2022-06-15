@@ -51,8 +51,8 @@ const config = {
       navbar: {
         title: "페이몬 애드온",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "logo",
+          src: "/img/docusaurus.png",
         },
         items: [
           {
