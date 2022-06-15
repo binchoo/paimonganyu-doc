@@ -5,7 +5,7 @@ export default function CreateQrCode() {
   return (
     <BrowserOnly fallback={<div>Loading...</div>}>
       {() => {
-        const CreateQrCode = require("./CreateQrCode");
+        const CreateQrCode = require("./CreateQrCode").CreateQrCode;
         return <CreateQrCode />;
       }}
     </BrowserOnly>

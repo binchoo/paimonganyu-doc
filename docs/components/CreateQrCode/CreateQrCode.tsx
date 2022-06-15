@@ -4,7 +4,7 @@ import { JSEncrypt } from "jsencrypt";
 import { Box, Button, Card, Modal, TextField } from "@material-ui/core";
 import { QRCodeSVG } from "qrcode.react";
 
-export default function CreateQrCode(): JSX.Element {
+export function CreateQrCode(): JSX.Element {
   const [ltuid, setLtuid] = useState<string>("");
   const [ltoken, setLtoken] = useState<string>("");
   const [cookietoken, setCookietoken] = useState<string>("");
