@@ -1,8 +1,8 @@
 import { getPublicKey } from "@site/src/api";
 import React, { useEffect, useMemo, useState } from "react";
-import crypto from "crypto-js";
 import { JSEncrypt } from "jsencrypt";
 import { Button, TextField } from "@material-ui/core";
+import { Base64 } from "@site/src/utils/base64";
 
 export default function CreateQrCode(): JSX.Element {
   const [ltuid, setLtuid] = useState<string>("");
@@ -13,7 +13,7 @@ export default function CreateQrCode(): JSX.Element {
   const [publicKey, setPublicKey] = useState<string | null>(null);
   useEffect(() => {
     getPublicKey().then((key: string) => {
-      setPublicKey(key);
+      setPublicKey(Base64.decode(key));
     });
   }, []);
   const digestRSA = useMemo(
@@ -66,6 +66,8 @@ export default function CreateQrCode(): JSX.Element {
         </div>
       </form>
       <pre>{JSON.stringify(data)}</pre>
+      <pre>{publicKey && Base64.encode(publicKey)}</pre>
+      <pre>{publicKey}</pre>
     </div>
   );
 }
