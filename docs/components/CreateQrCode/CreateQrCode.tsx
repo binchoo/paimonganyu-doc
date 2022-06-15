@@ -3,17 +3,18 @@ import React, { useEffect, useMemo, useState } from "react";
 import { JSEncrypt } from "jsencrypt";
 import { Button, TextField } from "@material-ui/core";
 import { Base64 } from "@site/src/utils/base64";
+import { QRCodeSVG } from "qrcode.react";
 
 export default function CreateQrCode(): JSX.Element {
   const [ltuid, setLtuid] = useState<string>("");
   const [ltoken, setLtoken] = useState<string>("");
   const [cookietoken, setCookietoken] = useState<string>("");
-  const [data, setData] = useState<any>("");
+  const [data, setData] = useState<string>("");
 
   const [publicKey, setPublicKey] = useState<string | null>(null);
   useEffect(() => {
     getPublicKey().then((key: string) => {
-      setPublicKey(Base64.decode(key));
+      setPublicKey(key);
     });
   }, []);
   const digestRSA = useMemo(
@@ -65,9 +66,18 @@ export default function CreateQrCode(): JSX.Element {
           </Button>
         </div>
       </form>
+      <div>{publicKey && Base64.decode(publicKey)}</div>
+      ---
+      <div>{publicKey && Base64.encode(Base64.decode(publicKey))}</div>
+      ---
+      <div>
+        {publicKey &&
+          Base64.encode(Base64.decode(Base64.encode(Base64.decode(publicKey))))}
+      </div>
+      ---
+      <div>{publicKey}</div>
       <pre>{JSON.stringify(data)}</pre>
-      <pre>{publicKey && Base64.encode(publicKey)}</pre>
-      <pre>{publicKey}</pre>
+      {data && <QRCodeSVG value={data} />}
     </div>
   );
 }
@@ -80,7 +90,7 @@ const onChangeHandlerFactory =
 const digestRSAFactory = (publicKey: string) => {
   const jSEncrypt = new JSEncrypt();
   jSEncrypt.setPublicKey(publicKey);
-  return ({ ltuid, ltoken, cookietoken }: Record<string, string>) => {
-    return jSEncrypt.encrypt(`${ltuid}:${ltoken}:${cookietoken}`);
+  return ({ ltuid, ltoken, cookietoken }: Record<string, string>): string => {
+    return jSEncrypt.encrypt(`${ltuid}:${ltoken}:${cookietoken}`) || "";
   };
 };
