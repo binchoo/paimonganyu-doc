@@ -1,20 +1,24 @@
 import { getPublicKey } from "@site/src/api";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import crypto from "crypto-js";
+import { JSEncrypt } from "jsencrypt";
 
 export default function CreateQrCode(): JSX.Element {
-  const [publicKey, setPublicKey] = useState<string | null>(null);
   const [ltuid, setLtuid] = useState<string>("");
   const [ltoken, setLtoken] = useState<string>("");
   const [cookietoken, setCookietoken] = useState<string>("");
-  const [data, setData] = useState<Record<string, string>>({});
+  const [data, setData] = useState<any>("");
 
+  const [publicKey, setPublicKey] = useState<string | null>(null);
   useEffect(() => {
     getPublicKey().then((key: string) => {
       setPublicKey(key);
     });
   }, []);
-
+  const digestRSA = useMemo(
+    () => (publicKey ? digestRSAFactory(publicKey) : () => ""),
+    [publicKey]
+  );
   return (
     <div>
       <form onSubmit={(event) => event.preventDefault()}>
@@ -45,11 +49,13 @@ export default function CreateQrCode(): JSX.Element {
         <div>
           <button
             onClick={() => {
-              setData({
-                ltuid,
-                ltoken,
-                cookietoken,
-              });
+              setData(
+                digestRSA({
+                  ltuid,
+                  ltoken,
+                  cookietoken,
+                })
+              );
             }}
           >
             생성하기!
@@ -66,4 +72,10 @@ const onChangeHandlerFactory =
     setValue(event.target.value);
   };
 
-// const digestRSA = { publicKey, data };
+const digestRSAFactory = (publicKey: string) => {
+  const jSEncrypt = new JSEncrypt();
+  jSEncrypt.setPublicKey(publicKey);
+  return ({ ltuid, ltoken, cookietoken }: Record<string, string>) => {
+    return jSEncrypt.encrypt(`${ltuid}:${ltoken}:${cookietoken}`);
+  };
+};
