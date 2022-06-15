@@ -57,6 +57,7 @@ export default function CreateQrCode(): JSX.Element {
         <div>
           <Button
             variant="contained"
+            disabled={!ltuid || !ltoken || !cookietoken}
             onClick={() => {
               setData(
                 digestRSA({
