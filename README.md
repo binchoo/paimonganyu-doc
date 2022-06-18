@@ -1,4 +1,6 @@
 # 여행 비서 페이몬!
+![](https://user-images.githubusercontent.com/15683098/174451092-752c670f-6450-4883-9c77-2b9629549e52.png)
+![](https://user-images.githubusercontent.com/15683098/174451095-783adfbc-e1d1-4480-a955-10d7ba954647.png)
 
 ## 원신 유저를 위한 카카오 챗봇
 
@@ -15,6 +17,8 @@
 **「여행 비서 페이몬!」 카카오 채널** :point_right: http://pf.kakao.com/_mtPFb
 
 카카오 채널과 친구를 맺고 챗봇 서비스 이용을 시작할 수 있어요!
+
+![](https://user-images.githubusercontent.com/15683098/174451071-6cc9ad30-2854-4548-a456-89740320dd47.png)
 
 ## 주요 기능
 
@@ -44,6 +48,8 @@
 
 [통행증 QR 만들기 페이지](https://binchoo.github.io/paimonganyu-doc/docs/tutorial/create-qr-code)
 
+![](https://user-images.githubusercontent.com/15683098/174451179-bf4a4f2e-e2c3-496e-b364-e5e030713bbb.png)
+
 > **QR 코드를 쓰는 이유**
 >
 > 통행증을 구성하는 값들은 복잡하여 채팅에다 입력하기 버거울 뿐더러, 
@@ -57,6 +63,8 @@
 **통행증 등록**은 여행 비서 페이몬과 <u>처음으로 해야 할 일</u>입니다.
 
 [통행증 QR 만들기 페이지](https://binchoo.github.io/paimonganyu-doc/docs/tutorial/create-qr-code)에서 QR 코드를 완성하고 챗봇에서 스캔합니다. 
+
+![image](https://user-images.githubusercontent.com/15683098/174451216-7413aeff-4fa5-49f1-a53d-d009ce91e96d.png)
 
 통행증 등록이 완료되면 페이몬이 해당 계정 속의 여행자들을 파악합니다.
 
@@ -102,6 +110,8 @@
 
 ### 통행증이란?
 
+![image](https://user-images.githubusercontent.com/15683098/174451232-a73a04cb-605b-43e7-aaba-59a8221eaed3.png)
+
 통행증이란, 호요버스에서 유저 계정에 부여하는 고유한 인증 정보를 말합니다.
 
 페이몬 비서가 여러분을 대신해 어떻게 호요버스 API를 호출할 수 있는 이유가 바로, 유저가 등록한 통행증 덕분입니다.
@@ -117,8 +127,9 @@
 3. `cookie_token`: 코드 리딤 서비스에서 이용되는 개인 토큰입니다. 
 
 
-
 이 세 가지 값을 찾는 방법 
+
+![image](https://user-images.githubusercontent.com/15683098/174451238-f18f1ceb-bcd9-44bf-aaa9-75c09bec5de9.png)
 
 #### **1단계. HoYoLab에서 로그인**
 
@@ -136,6 +147,7 @@
   <summary>영어 단계</summary>
    `DevTools(F12)`> `Application` 탭> `Storage` 섹션> `Cookies` 항목> 호요랩 URL 주소 클릭!
 </details>
+
 `ltoken`, `ltuid`, `cookie_token` 값을 발견하면 메모장 같은 데에 잘 복사해 두세요~.
 
 
