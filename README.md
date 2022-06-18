@@ -1,10 +1,8 @@
-# PaimonGanyu Doc: 여행 비서 페이몬! 
+# PaimonGanyu Doc: 여행 비서 페이몬! 설명 문서
 ![](https://user-images.githubusercontent.com/15683098/174451092-752c670f-6450-4883-9c77-2b9629549e52.png)
 ![](https://user-images.githubusercontent.com/15683098/174451095-783adfbc-e1d1-4480-a955-10d7ba954647.png)
 
-## 원신 유저를 위한 카카오 챗봇
-
-<b>「여행 비서 페이몬!」</b>이란
+## 「여행 비서 페이몬!」이란
 
 - 오픈 월드 RPG 게임 [**원신**](https://genshin.hoyoverse.com/ko/)을 대상으로 한 게임 편의성 챗봇입니다.
 
