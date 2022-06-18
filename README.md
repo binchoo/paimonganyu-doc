@@ -2,15 +2,15 @@
 
 ## 원신 유저를 위한 카카오 챗봇
 
-**「여행 비서 페이몬!」**은 
+<b>「여행 비서 페이몬!」</b>이란
 
-호요버스가 운영하는 오픈 월드 RPG 게임 [**원신**](https://genshin.hoyoverse.com/ko/)을 대상으로 한 게임 편의성 챗봇입니다.
+- 오픈 월드 RPG 게임 [**원신**](https://genshin.hoyoverse.com/ko/)을 대상으로 한 게임 편의성 챗봇입니다.
 
- 호요버스 커뮤니티의 API를 래핑하여, 원신 유저에게 다양한 편의 기능을 제공하는 것을 목표로 합니다.
+- 호요랩 API를 래핑하여, 원신 유저에게 다양한 편의 기능을 제공하는 것을 목표로 합니다.
 
 현 시점에 `호요랩 일일 출석`,  `여행자 상태 조회`, `코드 리딤 배포`를 중심으로 기능을 구성하고 있습니다.
 
-## 카카오 채널 및 챗봇
+## 카카오 채널 & 챗봇
 
 **「여행 비서 페이몬!」 카카오 채널** :point_right: http://pf.kakao.com/_mtPFb
 
@@ -42,7 +42,7 @@
 
 ### QR 코드(보안 통행증) 만들기
 
-[통행증 QR 만들기 페이지](./tutorial/create-qr-code)
+[통행증 QR 만들기 페이지](https://binchoo.github.io/paimonganyu-doc/docs/tutorial/create-qr-code)
 
 > **QR 코드를 쓰는 이유**
 >
@@ -56,7 +56,7 @@
 
 **통행증 등록**은 여행 비서 페이몬과 <u>처음으로 해야 할 일</u>입니다.
 
-[통행증 QR 만들기 페이지](./tutorial/create-qr-code)에서 QR 코드를 완성하고 챗봇에서 스캔합니다. 
+[통행증 QR 만들기 페이지](https://binchoo.github.io/paimonganyu-doc/docs/tutorial/create-qr-code)에서 QR 코드를 완성하고 챗봇에서 스캔합니다. 
 
 통행증 등록이 완료되면 페이몬이 해당 계정 속의 여행자들을 파악합니다.
 
