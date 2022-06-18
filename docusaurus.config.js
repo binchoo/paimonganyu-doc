@@ -9,7 +9,7 @@ const config = {
   title: "페이몬 ",
   tagline: "페이몬과 함께하는 무언가의 페이지",
   url: "https://github.com/binchoo/paimonganyu-doc",
-  baseUrl: "/",
+  baseUrl: "/paimonganyu-doc/",
 
   projectName: "paimonganyu-doc",
   organizationName: "binchoo",
