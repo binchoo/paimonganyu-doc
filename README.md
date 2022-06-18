@@ -1,4 +1,4 @@
-# 여행 비서 페이몬!
+# PaimonGanyu Doc: 여행 비서 페이몬! 
 ![](https://user-images.githubusercontent.com/15683098/174451092-752c670f-6450-4883-9c77-2b9629549e52.png)
 ![](https://user-images.githubusercontent.com/15683098/174451095-783adfbc-e1d1-4480-a955-10d7ba954647.png)
 
@@ -81,24 +81,17 @@
 조회한 통행증으로 출석 체크를 요청하거나, 정보 삭제를 요청할 수도 있습니다.
 
 ### 페이몬의 코드 리딤
-(관리자에 의해) 새로운 리딤 코드를 알게 될 때마다
-
-페이몬은 등록되어 있는 모든 통행증으로 코드 리딤을 넣어줍니다.
+관리자에 의해 새로운 리딤 코드를 알게 될 때마다, 페이몬은 등록되어 있는 모든 통행증으로 코드 리딤을 넣어줍니다.
 
 ### :wrench: 유저의 코드 리딤
 
- (개발중:wrench: 기능입니다.)
+(개발중:wrench: 기능입니다.)
 
-(유저에 의해) 새로운 리딤 코드를 알게 될 때마다 
-
-페이몬은 등록되어 있는 모든 통행증으로 코드 리딤을 넣어줍니다.
+유저에 의해 새로운 리딤 코드를 알게 될 때마다 , 페이몬은 등록되어 있는 모든 통행증으로 코드 리딤을 넣어줍니다.
 
 ### :wrench: 통행증 등록시 코드 리딤
 
 (개발중:wrench: 기능입니다.)
-
-![img](resources\new_user_redeem_workflow.png)
-*신규 통행증에 대한 코드 리딤 워크플로*
 
 시스템에 통행증을 등록할 경우, 해당 통행증을 대상으로 <u>알려진 모든 리딤 코드</u>가 리딤 시도됩니다. 
 
@@ -150,4 +143,10 @@
 
 `ltoken`, `ltuid`, `cookie_token` 값을 발견하면 메모장 같은 데에 잘 복사해 두세요~.
 
+## PaimonGanyu Doc LICENSE
+
+[CC0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.ko)
+
+**의존성 라이센스**
+- docusarus [MIT LICENSE](https://github.com/facebook/docusaurus/blob/main/LICENSE)
 
