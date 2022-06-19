@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "페이몬 ",
-  tagline: "페이몬과 함께하는 무언가의 페이지",
+  title: "여행 비서 페이몬!",
+  tagline: "카카오 챗봇 튜토리얼 사이트",
   url: "https://github.com/binchoo/paimonganyu-doc",
   baseUrl: "/paimonganyu-doc/",
 
@@ -48,10 +48,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "페이몬 애드온",
+        title: "PaimonGanyu",
         logo: {
           alt: "logo",
-          src: "/img/docusaurus.png",
+          src: "/img/paimonganyu.png",
         },
         items: [
           {
@@ -82,10 +82,10 @@ const config = {
           {
             title: "Community",
             items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
+              // {
+              //   label: "Stack Overflow",
+              //   href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              // },
               // {
               //   label: "Discord",
               //   href: "https://discordapp.com/invite/docusaurus",
@@ -101,12 +101,12 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/binchoo/paimonganyu-doc",
               },
             ],
           },
         ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `No Copyright © ${new Date().getFullYear()} PaimonGanyu-Doc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

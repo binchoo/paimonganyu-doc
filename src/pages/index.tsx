@@ -19,7 +19,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/tutorial"
           >
-            페이몬 튜토리얼 ⏱️
+            페이몬 비서 사용법 ⏱️
           </Link>
         </div>
       </div>
