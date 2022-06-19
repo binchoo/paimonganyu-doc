@@ -1,8 +1,8 @@
-# 여행 비서 페이몬!
+# PaimonGanyu Doc: 여행 비서 페이몬! 설명 문서
+![](https://user-images.githubusercontent.com/15683098/174451092-752c670f-6450-4883-9c77-2b9629549e52.png)
+![](https://user-images.githubusercontent.com/15683098/174451095-783adfbc-e1d1-4480-a955-10d7ba954647.png)
 
-## 원신 유저를 위한 카카오 챗봇
-
-<b>「여행 비서 페이몬!」</b>이란
+## 「여행 비서 페이몬!」이란
 
 - 오픈 월드 RPG 게임 [**원신**](https://genshin.hoyoverse.com/ko/)을 대상으로 한 게임 편의성 챗봇입니다.
 
@@ -15,6 +15,8 @@
 **「여행 비서 페이몬!」 카카오 채널** :point_right: http://pf.kakao.com/_mtPFb
 
 카카오 채널과 친구를 맺고 챗봇 서비스 이용을 시작할 수 있어요!
+
+![](https://user-images.githubusercontent.com/15683098/174451071-6cc9ad30-2854-4548-a456-89740320dd47.png)
 
 ## 주요 기능
 
@@ -44,6 +46,8 @@
 
 [통행증 QR 만들기 페이지](https://binchoo.github.io/paimonganyu-doc/docs/tutorial/create-qr-code)
 
+![](https://user-images.githubusercontent.com/15683098/174451179-bf4a4f2e-e2c3-496e-b364-e5e030713bbb.png)
+
 > **QR 코드를 쓰는 이유**
 >
 > 통행증을 구성하는 값들은 복잡하여 채팅에다 입력하기 버거울 뿐더러, 
@@ -57,6 +61,8 @@
 **통행증 등록**은 여행 비서 페이몬과 <u>처음으로 해야 할 일</u>입니다.
 
 [통행증 QR 만들기 페이지](https://binchoo.github.io/paimonganyu-doc/docs/tutorial/create-qr-code)에서 QR 코드를 완성하고 챗봇에서 스캔합니다. 
+
+![image](https://user-images.githubusercontent.com/15683098/174451216-7413aeff-4fa5-49f1-a53d-d009ce91e96d.png)
 
 통행증 등록이 완료되면 페이몬이 해당 계정 속의 여행자들을 파악합니다.
 
@@ -73,24 +79,17 @@
 조회한 통행증으로 출석 체크를 요청하거나, 정보 삭제를 요청할 수도 있습니다.
 
 ### 페이몬의 코드 리딤
-(관리자에 의해) 새로운 리딤 코드를 알게 될 때마다
-
-페이몬은 등록되어 있는 모든 통행증으로 코드 리딤을 넣어줍니다.
+관리자에 의해 새로운 리딤 코드를 알게 될 때마다, 페이몬은 등록되어 있는 모든 통행증으로 코드 리딤을 넣어줍니다.
 
 ### :wrench: 유저의 코드 리딤
 
- (개발중:wrench: 기능입니다.)
+(개발중:wrench: 기능입니다.)
 
-(유저에 의해) 새로운 리딤 코드를 알게 될 때마다 
-
-페이몬은 등록되어 있는 모든 통행증으로 코드 리딤을 넣어줍니다.
+유저에 의해 새로운 리딤 코드를 알게 될 때마다 , 페이몬은 등록되어 있는 모든 통행증으로 코드 리딤을 넣어줍니다.
 
 ### :wrench: 통행증 등록시 코드 리딤
 
 (개발중:wrench: 기능입니다.)
-
-![img](resources\new_user_redeem_workflow.png)
-*신규 통행증에 대한 코드 리딤 워크플로*
 
 시스템에 통행증을 등록할 경우, 해당 통행증을 대상으로 <u>알려진 모든 리딤 코드</u>가 리딤 시도됩니다. 
 
@@ -101,6 +100,8 @@
 >통행증이 없다면 페이몬 비서는 아무 일도 할 수 없습니다. 페이몬 비서와의 "첫 단추"는 통행증 QR을 만들어서 스캔 전송하는 것임을 기억하세요.
 
 ### 통행증이란?
+
+![image](https://user-images.githubusercontent.com/15683098/174451232-a73a04cb-605b-43e7-aaba-59a8221eaed3.png)
 
 통행증이란, 호요버스에서 유저 계정에 부여하는 고유한 인증 정보를 말합니다.
 
@@ -117,8 +118,9 @@
 3. `cookie_token`: 코드 리딤 서비스에서 이용되는 개인 토큰입니다. 
 
 
-
 이 세 가지 값을 찾는 방법 
+
+![image](https://user-images.githubusercontent.com/15683098/174451238-f18f1ceb-bcd9-44bf-aaa9-75c09bec5de9.png)
 
 #### **1단계. HoYoLab에서 로그인**
 
@@ -136,6 +138,13 @@
   <summary>영어 단계</summary>
    `DevTools(F12)`> `Application` 탭> `Storage` 섹션> `Cookies` 항목> 호요랩 URL 주소 클릭!
 </details>
+
 `ltoken`, `ltuid`, `cookie_token` 값을 발견하면 메모장 같은 데에 잘 복사해 두세요~.
 
+## PaimonGanyu Doc LICENSE
+
+[CC0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.ko)
+
+**의존성 라이센스**
+- docusarus [MIT LICENSE](https://github.com/facebook/docusaurus/blob/main/LICENSE)
 
