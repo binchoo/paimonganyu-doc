@@ -10,7 +10,6 @@ const config = {
   tagline: "카카오 챗봇 튜토리얼 사이트",
   url: "https://github.com/binchoo/paimonganyu-doc",
   baseUrl: "/paimonganyu-doc/",
-
   projectName: "paimonganyu-doc",
   organizationName: "binchoo",
   trailingSlash: false,
