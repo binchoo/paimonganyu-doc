@@ -2,7 +2,7 @@ import { getPublicKey } from "@site/src/api";
 import React, { useEffect, useMemo, useState } from "react";
 import { JSEncrypt } from "jsencrypt";
 import { Box, Button, Card, Modal, TextField } from "@material-ui/core";
-import { QRCodeSVG } from "qrcode.react";
+import { QRCodeCanvas } from "qrcode.react";
 
 export function CreateQrCode(): JSX.Element {
   const [ltuid, setLtuid] = useState<string>("");
@@ -79,7 +79,7 @@ export function CreateQrCode(): JSX.Element {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <QRCodeSVG value={data} size={200} />
+          <QRCodeCanvas value={data} size={300} includeMargin={true} />
         </Box>
       </Modal>
     </Card>
