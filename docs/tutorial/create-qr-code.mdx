@@ -27,7 +27,9 @@ import CreateQrCode from "../components/CreateQrCode";
 
 ### **1단계. HoYoLab에서 로그인**
 
-호요랩에 로그인을 해 주세요. 미리 로그인이 되어 있다면 **로그아웃 후 로그인** 해 주세요. 자칫 `cookie_token`이 누락 될 수가 있어요.
+호요랩에 미리 로그인이 되어 있으시면 **로그아웃 후 로그인** 해 주세요. 
+
+자칫 `cookie_token`이 누락될 수가 있어요.
 
 ![호요랩 로그인](resources\hoyopass_login.png)
 
@@ -80,3 +82,5 @@ prompt('CTRL+C하여 세 가지 값을 복사하세요', hoyopass.join('\n'));
   <summary>영어 단계</summary>
    `DevTools(F12)`> `Console` 탭>  스크립트를 붙여넣고 엔터> 팝업 창의 쿠키 정보를 CTRL+C 복사!
 </details>
+
+`ltuid`, `ltoken`, `cookie_token` 를 복사하시어 메모장 같은 데 붙이시면 줄 별로 구분됩니다~
