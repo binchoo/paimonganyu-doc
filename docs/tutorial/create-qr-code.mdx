@@ -15,7 +15,7 @@ import CreateQrCode from "../components/CreateQrCode";
 
 ### 본인의 통행증 값 알아내기
 
-본인의 통행증 정보는 <u>호요랩 로그인 후 브라우저의 쿠키에 세팅</u>되며, 3가지 값으로 구성됩니다.
+본인의 통행증 정보는 **호요랩 로그인 후 브라우저의 쿠키에 세팅**되며, 3가지 값으로 구성됩니다.
 
 1. `ltuid`: 호요버스 계정의 통행증 아이디입니다.
 2. `ltoken`: 통행증 아이디에 대응되는 개인 토큰입니다.
@@ -23,17 +23,15 @@ import CreateQrCode from "../components/CreateQrCode";
 
 
 
-이 세 가지 값을 찾는 법 - 간단한 두 방식이 있어요!
+이 세 가지 값을 찾는 법 - 간단한 **두 방식**이 있어요!
 
 ### **1단계. HoYoLab에서 로그인**
-
-호요랩에 미리 로그인이 되어 있으시면 **로그아웃 후 로그인** 해 주세요. 
-
-자칫 `cookie_token`이 누락될 수가 있어요.
 
 ![호요랩 로그인](resources\hoyopass_login.png)
 
 **PC 브라우저**로 [호요랩](https://www.hoyolab.com/home)에 방문해서 본인의 호요버스 계정으로 로그인 해 주세요.
+
+호요랩에 미리 로그인 되어 있다면 **로그아웃 후 로그인** 해야 해요.  자칫 `cookie_token`이 누락될 수 있습니다.
 
 ### 2단계-A. 개발자 도구로 쿠키 값 들여다 보기
 
@@ -42,7 +40,7 @@ import CreateQrCode from "../components/CreateQrCode";
 ![통행증 쿠키](resources\hoyopass_cookies.png)
 
 
-<details>
+<details open>
   <summary>한국어 단계</summary>
    `개발자도구(F12)` > `응용 프로그램` 탭> `저장소` 섹션> `쿠키` 항목> 호요랩 URL 주소 클릭!
 </details>
@@ -63,7 +61,7 @@ import CreateQrCode from "../components/CreateQrCode";
 
 ```javascript
 var pick = ({ltuid, ltoken, cookie_token})=> [ltuid, ltoken, cookie_token];
-var hoyopass = pick( document.cookie.split('; ').reduce((prev, current) => {
+var hoyopass = pick(document.cookie.split('; ').reduce((prev, current)=> {
     const [name, ...value] = current.split('=');
     prev[name] = value.join('=');
     return prev;
@@ -73,7 +71,7 @@ prompt('CTRL+C하여 세 가지 값을 복사하세요', hoyopass.join('\n'));
 
 ![통행증 쿠키 스크립트](resources\hoyopass_cookies_script.png)
 
-<details>
+<details open>
   <summary>한국어 단계</summary>
    `개발자도구(F12)` > `콘솔` 탭>  스크립트를 붙여넣고 엔터> 팝업 창의 쿠키 정보를 CTRL+C 복사!
 </details>
