@@ -42,12 +42,12 @@ import CreateQrCode from "../components/CreateQrCode";
 
 <details open>
   <summary>한국어 단계</summary>
-   `개발자도구(F12)` > `응용 프로그램` 탭> `저장소` 섹션> `쿠키` 항목> 호요랩 URL 주소 클릭!
+   '개발자도구(F12)' > '응용 프로그램' 탭> '저장소' 섹션> '쿠키' 항목> 호요랩 URL 주소 클릭!
 </details>
 
 <details>
   <summary>영어 단계</summary>
-   `DevTools(F12)`> `Application` 탭> `Storage` 섹션> `Cookies` 항목> 호요랩 URL 주소 클릭!
+  'DevTools(F12)'> 'Application' 탭> 'Storage' 섹션> 'Cookies' 항목> 호요랩 URL 주소 클릭!
 </details>
 
 
@@ -60,25 +60,27 @@ import CreateQrCode from "../components/CreateQrCode";
 **아래의 스크립트를 복붙**하여 이용해 주세요.
 
 ```javascript
-var pick = ({ltuid, ltoken, cookie_token})=> [ltuid, ltoken, cookie_token];
+var pick = ({ltuid, ltoken, cookie_token})=> ({ltuid, ltoken, cookie_token});
 var hoyopass = pick(document.cookie.split('; ').reduce((prev, current)=> {
     const [name, ...value] = current.split('=');
     prev[name] = value.join('=');
     return prev;
   }, {}));
-prompt('CTRL+C하여 세 가지 값을 복사하세요', hoyopass.join('\n'));
+Object.entries(hoyopass).forEach(([key, value])=> {
+    prompt(`CTRL+C하여 ${key}를 복사하세요.`, value);
+});
 ```
 
 ![통행증 쿠키 스크립트](resources\hoyopass_cookies_script.png)
 
 <details open>
   <summary>한국어 단계</summary>
-   `개발자도구(F12)` > `콘솔` 탭>  스크립트를 붙여넣고 엔터> 팝업 창의 쿠키 정보를 CTRL+C 복사!
+   '개발자도구(F12)' > '콘솔' 탭>  스크립트를 붙여넣고 엔터> 팝업 창의 쿠키 정보를 복사해서 쓰세요!
 </details>
 
 <details>
   <summary>영어 단계</summary>
-   `DevTools(F12)`> `Console` 탭>  스크립트를 붙여넣고 엔터> 팝업 창의 쿠키 정보를 CTRL+C 복사!
+   'DevTools(F12)'> 'Console' 탭>  스크립트를 붙여넣고 엔터> 팝업 창의 쿠키 정보를 복사해서 쓰세요!
 </details>
 
-`ltuid`, `ltoken`, `cookie_token` 를 복사하시어 메모장 같은 데 붙이시면 줄 별로 구분됩니다~
+`ltuid`, `ltoken`, `cookie_token` 를 순차적으로 복사하시어 사용하세요~
