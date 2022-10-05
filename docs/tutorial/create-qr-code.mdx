@@ -33,27 +33,7 @@ import CreateQrCode from "../components/CreateQrCode";
 
 호요랩에 미리 로그인 되어 있다면 **로그아웃 후 로그인** 해야 해요.  자칫 `cookie_token`이 누락될 수 있습니다.
 
-### 2단계-A. 개발자 도구로 쿠키 값 들여다 보기
-
-이 방법은 여러분이 직접 세 가지 쿠키 값을 찾아내는 방법이에요.
-
-![통행증 쿠키](resources\hoyopass_cookies.png)
-
-
-<details open>
-  <summary>한국어 단계</summary>
-   '개발자도구(F12)' > '응용 프로그램' 탭> '저장소' 섹션> '쿠키' 항목> 호요랩 URL 주소 클릭!
-</details>
-
-<details>
-  <summary>영어 단계</summary>
-  'DevTools(F12)'> 'Application' 탭> 'Storage' 섹션> 'Cookies' 항목> 호요랩 URL 주소 클릭!
-</details>
-
-
-이미지처럼 `ltuid`, `ltoken`, `cookie_token` 값을 발견하면 메모장 같은 데에 잘 복사해 두세요~
-
-### 2단계-B. 개발자 도구로 스크립트 실행
+### 2단계-A. 개발자 도구로 스크립트 실행
 
 이 방법은 자바스크립트를 실행해서 빠르게 세 가지 쿠키 값을 찾는 방법이에요.
 
@@ -67,7 +47,7 @@ var hoyopass = pick(document.cookie.split('; ').reduce((prev, current)=> {
     return prev;
   }, {}));
 Object.entries(hoyopass).forEach(([key, value])=> {
-    prompt(`CTRL+C하여 ${key}를 복사하세요.`, value);
+    prompt(`CTRL+C하여 ${key}를 복사하세요.`, value?? '로그인을 다시 해주세요.');
 });
 ```
 
@@ -84,3 +64,22 @@ Object.entries(hoyopass).forEach(([key, value])=> {
 </details>
 
 `ltuid`, `ltoken`, `cookie_token` 를 순차적으로 복사하시어 사용하세요~
+
+### 2단계-B. 개발자 도구로 쿠키 값 들여다 보기
+
+이 방법은 여러분이 직접 세 가지 쿠키 값을 찾아내는 방법이에요.
+
+![통행증 쿠키](resources\hoyopass_cookies.png)
+
+
+<details open>
+  <summary>한국어 단계</summary>
+   '개발자도구(F12)' > '응용 프로그램' 탭> '저장소' 섹션> '쿠키' 항목> 호요랩 URL 주소 클릭!
+</details>
+
+<details>
+  <summary>영어 단계</summary>
+  'DevTools(F12)'> 'Application' 탭> 'Storage' 섹션> 'Cookies' 항목> 호요랩 URL 주소 클릭!
+</details>
+
+이미지처럼 `ltuid`, `ltoken`, `cookie_token` 값을 발견하면 메모장 같은 데에 잘 복사해 두세요~
