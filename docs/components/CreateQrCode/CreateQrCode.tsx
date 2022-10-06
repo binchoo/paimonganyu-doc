@@ -95,9 +95,10 @@ const digestRSAFactory = (publicKey: string) => {
   const jSEncrypt = new JSEncrypt();
   jSEncrypt.setPublicKey(publicKey);
   return ({ ltuid, ltoken, cookietoken }: Record<string, string>): string => {
-    return jSEncrypt.encrypt(`${ltuid}:${ltoken}:${cookietoken}`) || "";
+    return jSEncrypt.encrypt(`${ltuid.trim()}:${ltoken.trim()}:${cookietoken.trim()}`) || "";
   };
 };
+
 const style = {
   position: "absolute",
   top: "50%",
